@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha of the Day</title>
+
+<style>
+
+  body {
+    background-color: #f0f5ee;
+    font-family: Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+  }
+
+  h1 {
+    color: #3a5a40;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  #card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+    min-height: 180px;
+  }
+
+  #matcha-name {
+    color: #3a5a40;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #matcha-recipe, #matcha-mood, #matcha-song {
+    color: #5a7a5c;
+    line-height: 1.8;
+    margin: 0.3rem 0;
+  }
+
+  button {
+    background-color: #3a5a40;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #6b8f71;
+  }
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a8c5a0;
+  margin-top: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(8px); }
+  to { opacity: 1; transform: translate(0); }  
+}
+
+.pop {
+    animation: fadeIn 0.4s ease-out;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Matcha of the Day 🍵</h1>
+
+    <div id="card">
+        <h2 id="matcha-name">Click the button!</h2>
+
+        <p class="label">Recipe 🌿</p>
+        <p id="matcha-recipe"></p>
+        <p class="label">Mood ✨</p>
+        <p id="matcha-mood"></p>
+        <p class="label">Song 🎵</p>
+        <p id="matcha-song"></p>
+    </div>
+
+    <button onclick="radomize()">Get Today's Matcha</button>
+<script>
+    const matchas = [
+        {
+            name: "Iced Vanilla Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp vanilla syrup, ice cubes",
+            mood: "Refreshing and sweet, perfect for a sunny day!",
+            song: "Lost - Frank Ocean"
+        },
+        {
+            name: "Fig Matcha Latte",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tbsp fig butter",
+            mood: "Calm and cozy, ideal for a relaxing afternoon.",
+            song: "Softcore - The Neighbourhood"
+        },
+        {
+            name: "Orange Matcha",
+            recipe: "2 tsp matcha powder, 1 cup orange juice, 1 tsp honey",
+            mood: "Energizing and vibrant, great for a morning boost!",
+            song: "The Less I Know The Better - Tame Impala"
+        },
+        {
+            name: "Banana Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp banana  (one banana blended)",
+            mood: "Cool and invigorating, perfect for a hot day!",
+            song: "My Jinji - Sunset Rollercoaster"
+        },
+        {
+            name: "Coconut Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp coconut syrup",
+            mood: "Tropical and creamy, ideal for a beach day vibe.",
+            song: "No One Noticed - the Marias"
+        },
+        {
+            name: "Mint Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp mint syrup",
+            mood: "Cool and refreshing, perfect for a summer day!",
+            song: "Can I Call You Tonight - Dayglow"
+        },
+        {
+            name: "Honey Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp honey",
+            mood: "Sweet and comforting, great for a cozy evening.",
+            song: "Let Down - Radiohead"
+        },
+        {
+            name: "Lavender Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp lavender syrup",
+            mood: "Floral and calming, ideal for a peaceful moment.",
+            song: "Space Song - Beach House"
+        },
+        {
+            name: "Brown Sugar Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp brown sugar",
+            mood: "Warm and comforting, great for a cozy evening.",
+            song: "You Say I'm in Love - Banes World"
+        },
+        {
+            name: "Caramel Matcha",
+            recipe: "2 tsp matcha powder, 1 cup milk, 1 tsp caramel syrup",
+            mood: "Sweet and indulgent, great for a treat-yourself day.",
+            song: "Homage - Mild High Club"
+        }
+    ];
+
+    function radomize() {
+        const card = document.getElementById("card");
+  card.classList.remove("pop");
+  void card.offsetWidth;
+  card.classList.add("pop");
+        const pick=matchas[Math.floor(Math.random() * matchas.length)];
+
+        document.getElementById("matcha-name").textContent = pick.name;
+        document.getElementById("matcha-recipe").textContent = pick.recipe;
+        document.getElementById("matcha-mood").textContent = pick.mood;
+        document.getElementById("matcha-song").textContent = pick.song; 
+    }
+    
+
+</script>
+
+</body>
+</html>
