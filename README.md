@@ -2,7 +2,7 @@
 
 A fun little website that randomizes a matcha drink recipe, mood, and song pairing for the day.
 
-Built with HTML, CSS, and JavaScript.
+Built with HTML.
 
 ## Live Site
 [Click here to try it!](https://matcha-site-three.vercel.app/)
